@@ -29,6 +29,12 @@ if [ $? -gt 0 ]; then
 	exit 16
 fi
 
+m4 --version >/dev/null 2>&1 
+if [ $? -gt 0 ]; then
+	echo "You need m4 on your PATH in order to build AUTOCONF" >&2
+	exit 16
+fi
+
 whence c99 >/dev/null
 if [ $? -gt 0 ]; then
 	echo "c99 required to build AUTOCONF. " >&2
