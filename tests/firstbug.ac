@@ -1,0 +1,5 @@
+# Must init the autoconf setup
+# The first parameter is project name
+# second is version number
+# third is bug report address
+AC_INIT([hello], [1.0])
