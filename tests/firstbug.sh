@@ -4,7 +4,7 @@
 # ERROR: end of file in comment
 #
 echo 'm4_define([m4_require_silent_probe], [-])' | \
-  /usr/local/bin/autom4te --language Autoconf-without-aclocal-m4  \
+  /usr/local/bin/autom4te -v --language Autoconf-without-aclocal-m4  \
   - /usr/local/share/aclocal-1.16/internal/ac-config-macro-dirs.m4 \
   '/usr/local/share/aclocal-1.16/amversion.m4' '/usr/local/share/aclocal-1.16/auxdir.m4' \
   '/usr/local/share/aclocal-1.16/cond.m4' '/usr/local/share/aclocal-1.16/depend.m4' \
