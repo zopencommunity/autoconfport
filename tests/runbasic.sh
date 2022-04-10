@@ -1,9 +1,10 @@
 #!/bin/sh
 
-cd basic
+cd basic || exit 99
+export PATH="${AUTOCONF_PROD}/bin:$PATH"
 
-if ! [ -x /usr/local/bin/aclocal ]; then
-	echo "Have to 'make install' automake before running test" >&2
+if ! whence autoreconf ; then
+	echo "Have to 'make install' before running test" >&2
 	exit 4
 fi
 

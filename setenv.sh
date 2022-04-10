@@ -13,14 +13,17 @@ else
 	export AUTOCONF_VRM="autoconf-2.71"
 	export AUTOCONF_ROOT="${PWD}"
 
-	# 
-	# Add 'm4' to PATH
-	#
-	export PATH=/usr/local/bin:$PATH 
+	export AUTOTOOLS_MIRROR="https://github.com/autotools-mirror"
+	export AUTOCONF_URL="http://ftp.gnu.org/gnu/autoconf/"
 
 	#
-	# Add 'Perl' to PATH, LIBPATH, PERL5LIB
+	# Add 'Perl' and 'M4' to PATH, LIBPATH, PERL5LIB
 	#
- 	export PERL5LIB=$PERL5LIB:/usr/local/lib/perl5
- 	export LIBPATH=$LIBPATH:/usr/local/lib/perl5/5.24.0/os390/CORE
+	fsroot=$( basename $HOME )                         
+	export PERL_ROOT="/${fsroot}/perlprod"
+	export M4_ROOT="/${fsroot}/m4prod"
+ 	export LIBPATH="${PERL_ROOT}/lib/perl5/*/os390/CORE:$LIBPATH"
+	export PATH="${M4_ROOT}/bin:${PERL_ROOT}/bin:$PATH"
+
+	export AUTOCONF_PROD="/${fsroot}/autoconfprod"     
 fi
