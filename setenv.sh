@@ -22,7 +22,8 @@ else
 	fsroot=$( basename $HOME )                         
 	export PERL_ROOT="/${fsroot}/perlprod"
 	export M4_ROOT="/${fsroot}/m4prod"
- 	export LIBPATH="${PERL_ROOT}/lib/perl5/*/os390/CORE:$LIBPATH"
+	export PERLLIB=$( cd ${PERL_ROOT}/lib/perl5/*/os390/CORE; echo $PWD )
+	export LIBPATH="${PERLLIB}:${LIBPATH}"
 	export PATH="${M4_ROOT}/bin:${PERL_ROOT}/bin:$PATH"
 
 	export AUTOCONF_PROD="/${fsroot}/autoconfprod"     
