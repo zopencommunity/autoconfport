@@ -113,11 +113,6 @@ if ! make ; then
 	exit 16
 fi
 
-if ! make install ; then
-	echo "MAKE install of AUTOCONF tree failed." >&2
-	exit 16
-fi
-
 cd "${DELTA_ROOT}/tests"
 export PATH="${AUTOCONF_ROOT}/${AUTOCONF_VRM}/src:${PATH}"
 
@@ -127,6 +122,16 @@ if ! ./runbasic.sh ; then
 fi
 if ! ./runexamples.sh; then
 	echo "Example tests of AUTOCONF failed." >&2
+	exit 16
+fi
+
+cd "${AUTOCONF_ROOT}/${AUTOCONF_VRM}"
+if ! make check ; then
+	echo "MAKE check of AUTOCONF tree failed." >&2
+	exit 16
+fi
+if ! make install ; then
+	echo "MAKE install of AUTOCONF tree failed." >&2
 	exit 16
 fi
 
