@@ -101,7 +101,7 @@ fi
 #
 # Setup the configuration so that the system search path looks in lib and include ahead of the standard C libraries
 #
-./configure CC=c99 CFLAGS="-qlanglvl=extc1x -qascii -D_OPEN_THREADS=3 -D_UNIX03_SOURCE=1 -DNSIG=39 -qnose -I${AUTOCONF_ROOT}/${AUTOCONF_VRM}/lib,${DELTA_ROOT}/include,/usr/include" --prefix="${AUTOCONF_PROD}"
+./configure CC=c99 CFLAGS="-qlanglvl=extc1x -qascii -D_OPEN_THREADS=3 -D_UNIX03_SOURCE=1 -DNSIG=39 -qnose -I${AUTOCONF_ROOT}/${AUTOCONF_VRM}/lib,${DELTA_ROOT}/include,/usr/include" --disable-dependency-tracking --prefix="${AUTOCONF_PROD}"
 if [ $? -gt 0 ]; then
 	echo "Configure of AUTOCONF tree failed." >&2
 	exit 16
