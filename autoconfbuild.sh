@@ -9,7 +9,7 @@
 #  - ensure you have access to c99
 #  - either pre-install the AUTOCONF tar ball into AUTOCONF_ROOT or have curl/gunzip installed for auto-download
 #
-set -x
+#set -x
 
 if [ "${AUTOCONF_ROOT}" = '' ]; then
 	echo "Need to set AUTOCONF_ROOT - source setenv.sh" >&2
