@@ -22,7 +22,6 @@ if [ "${AUTOCONF_VRM}" = '' ]; then
         exit 16
 fi
 
-
 CODE_ROOT="${AUTOCONF_ROOT}/${AUTOCONF_VRM}"
 PATCH_ROOT="${AUTOCONF_ROOT}/patches"
 patches=`cd ${PATCH_ROOT} && find . -name "*.patch"`
