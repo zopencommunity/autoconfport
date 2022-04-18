@@ -1,0 +1,28 @@
+***************
+*** 1672,1676 ****
+      exit $exit_status
+  ' 0
+! for ac_signal in 1 2 13 15; do
+    trap 'ac_signal='$ac_signal'; as_fn_exit 1' $ac_signal
+  done
+--- 1672,1677 ----
+      exit $exit_status
+  ' 0
+! #for ac_signal in 1 2 13 15; do
+! for ac_signal in HUP INT PIPE TERM; do
+    trap 'ac_signal='$ac_signal'; as_fn_exit 1' $ac_signal
+  done
+***************
+*** 4224,4228 ****
+    { test ! -d "$ac_tmp" || rm -fr "$ac_tmp"; } && exit $exit_status
+  ' 0
+!   trap 'as_fn_exit 1' 1 2 13 15
+  }
+  # Create a (secure) tmp directory for tmp files.
+--- 4225,4230 ----
+    { test ! -d "$ac_tmp" || rm -fr "$ac_tmp"; } && exit $exit_status
+  ' 0
+! #  trap 'as_fn_exit 1' 1 2 13 15
+!   trap 'as_fn_exit 1' HUP INT PIPE TERM
+  }
+  # Create a (secure) tmp directory for tmp files.

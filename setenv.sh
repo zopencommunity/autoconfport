@@ -12,6 +12,8 @@ else
 
 	export AUTOCONF_VRM="autoconf-2.71"
 	export AUTOCONF_ROOT="${PWD}"
+	
+        export PATH="${AUTOCONF_ROOT}/bin:$PATH"
 
 	export AUTOTOOLS_MIRROR="https://github.com/autotools-mirror"
 	export AUTOCONF_URL="http://ftp.gnu.org/gnu/autoconf/"
