@@ -3,18 +3,20 @@
 # When this is run, it spits out an error:
 # ERROR: end of file in comment
 #
+export AUTOM4TE="/${fsroot}/autoconfprod/bin/autom4te"
+export AUTOMAKE_SHARE="/${fsroot}/automakeprod/share/aclocal-1.16"
 echo 'm4_define([m4_require_silent_probe], [-])' | \
-  /usr/local/bin/autom4te -v --language Autoconf-without-aclocal-m4  \
-  - /usr/local/share/aclocal-1.16/internal/ac-config-macro-dirs.m4 \
-  '/usr/local/share/aclocal-1.16/amversion.m4' '/usr/local/share/aclocal-1.16/auxdir.m4' \
-  '/usr/local/share/aclocal-1.16/cond.m4' '/usr/local/share/aclocal-1.16/depend.m4' \
-  '/usr/local/share/aclocal-1.16/depout.m4' '/usr/local/share/aclocal-1.16/init.m4' \
-  '/usr/local/share/aclocal-1.16/install-sh.m4' '/usr/local/share/aclocal-1.16/lead-dot.m4' \
-  '/usr/local/share/aclocal-1.16/make.m4' '/usr/local/share/aclocal-1.16/missing.m4' \
-  '/usr/local/share/aclocal-1.16/options.m4' '/usr/local/share/aclocal-1.16/prog-cc-c-o.m4' \
-  '/usr/local/share/aclocal-1.16/runlog.m4' '/usr/local/share/aclocal-1.16/sanity.m4' \
-  '/usr/local/share/aclocal-1.16/silent.m4' '/usr/local/share/aclocal-1.16/strip.m4' \
-  '/usr/local/share/aclocal-1.16/substnot.m4' '/usr/local/share/aclocal-1.16/tar.m4' \
+  ${AUTOM4TE} -v --language Autoconf-without-aclocal-m4  \
+  - ${AUTOMAKE_SHARE}/internal/ac-config-macro-dirs.m4 \
+  ${AUTOMAKE_SHARE}/amversion.m4 ${AUTOMAKE_SHARE}/auxdir.m4 \
+  ${AUTOMAKE_SHARE}/cond.m4 ${AUTOMAKE_SHARE}/depend.m4 \
+  ${AUTOMAKE_SHARE}/depout.m4 ${AUTOMAKE_SHARE}/init.m4 \
+  ${AUTOMAKE_SHARE}/install-sh.m4 ${AUTOMAKE_SHARE}/lead-dot.m4 \
+  ${AUTOMAKE_SHARE}/make.m4 ${AUTOMAKE_SHARE}/missing.m4 \
+  ${AUTOMAKE_SHARE}/options.m4 ${AUTOMAKE_SHARE}/prog-cc-c-o.m4 \
+  ${AUTOMAKE_SHARE}/runlog.m4 ${AUTOMAKE_SHARE}/sanity.m4 \
+  ${AUTOMAKE_SHARE}/silent.m4 ${AUTOMAKE_SHARE}/strip.m4 \
+  ${AUTOMAKE_SHARE}/substnot.m4 ${AUTOMAKE_SHARE}/tar.m4 \
   --trace='AC_DEFUN:$f::$n::${::}%' --trace='AC_DEFUN_ONCE:$f::$n::${::}%' \
   --trace='AU_DEFUN:$f::$n::${::}%' --trace='_AM_AUTOCONF_VERSION:$f::$n::${::}%' \
   --trace='AC_CONFIG_MACRO_DIR_TRACE:$f::$n::${::}%' --trace='AC_CONFIG_MACRO_DIR:$f::$n::${::}%' \

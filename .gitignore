@@ -52,3 +52,7 @@ Makefile
 # autoconf base code
 #
 autoconf-*
+
+tests/basic/aclocal.m4
+tests/basic/build-aux/
+tests/basic/configure
