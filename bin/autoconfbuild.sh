@@ -86,6 +86,11 @@ if ! chtag -R -h -t -cISO8859-1 "${AUTOCONF_VRM}" ; then
 	exit 16
 fi
 
+if ! managepatches.sh ; then
+	echo "Unable to apply patches" >&2
+	exit 16
+fi
+
 DELTA_ROOT="${PWD}"
 
 cd "${AUTOCONF_ROOT}/${AUTOCONF_VRM}"
