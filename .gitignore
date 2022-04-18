@@ -56,3 +56,8 @@ autoconf-*
 tests/basic/aclocal.m4
 tests/basic/build-aux/
 tests/basic/configure
+tests/basic/config.log
+tests/basic/config.status
+tests/basic/hello
+tests/basic/hello.dbg
+tests/basic/hello.o
