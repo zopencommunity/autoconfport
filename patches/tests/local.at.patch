@@ -1,8 +1,21 @@
 ***************
+*** 153,156 ****
+--- 153,161 ----
+  # remove the error code during normalization.
+  #
++ # Remove informational message number EDC5129I and also the final
++ #  period at the end of the text. Do this before the general 
++ #  informational message removal so that the period will be removed.     
++ # Remove informational messages of the form EDDnnnnI from text
++ #
+  m4_define([AT_CHECK_M4],
+  [AT_CHECK([$1], [$2], [$3],
+***************
 *** 162,165 ****
---- 162,166 ----
+--- 167,172 ----
   	s/: C\(annot open \)\([^`:]*\):/: c\1`\2'\'':/
   	s/: include:\( cannot open\)/:\1/
-+         s/\(.*\)\(EDC5129I \)\(No such file or directory\)\.$/\1\3/
++         s/\(.*\)\( EDC5129I \)\(.*\)\.$/\1 \3/
++         s/\(.*\)\( EDC[0-9][0-9][0-9][0-9]I \)\(.*\)/\1 \3/
   	s/^autom4te: [^ ]*m4[.ex]* /autom4te: m4 /
   	s/^autom4te: error: [^ ]*m4[.ex]* /autom4te: error: m4 /
