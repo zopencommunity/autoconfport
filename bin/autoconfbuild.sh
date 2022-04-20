@@ -41,7 +41,7 @@ if ! whence c99 >/dev/null ; then
 	exit 16
 fi
 
-if ! [ -f "${ZLIB}/libz.a" ]; then
+if ! [ -f "/lib/libz.a" ]; then
 	echo "libz.a required for autoconf." >&2
 	exit 16
 fi
@@ -113,15 +113,13 @@ fi
 # Setup the configuration so that the system search path looks in lib and include ahead of the standard C libraries
 #
 export CONFIG_OPTS=""
-export LIBS="${ZLIB}"
 
-./configure CC=c99 CFLAGS="-qlanglvl=extc1x -qascii -D_OPEN_THREADS=3 -D_UNIX03_SOURCE=1 -DNSIG=39" "${CONFIG_OPTS}" --prefix="${AUTOCONF_PROD}"
+./configure CC=xlclang CFLAGS="-Wc,lp64 -Wl,lp64 -qascii -D_OPEN_THREADS=3 -D_UNIX03_SOURCE=1 -DNSIG=39 -qnose -I${ZLIB_ROOT}/include,/usr/include" "${CONFIG_OPTS}" --prefix="${AUTOCONF_PROD}"
 if [ $? -gt 0 ]; then
 	echo "Configure of AUTOCONF tree failed." >&2
 	exit 16
 fi
 
-unset LIBS
 cd "${AUTOCONF_ROOT}/${AUTOCONF_VRM}"
 if ! make ; then
 	echo "MAKE of AUTOCONF tree failed." >&2
@@ -144,7 +142,6 @@ fi
 # Run test cases
 #
 cd "${AUTOCONF_ROOT}/${AUTOCONF_VRM}"
-export LIBS="${ZLIB}"
 
 # Could use 'make check' but for now, run the tests using testsuite directly
 if false ; then
@@ -157,15 +154,15 @@ else
 		echo "Unable to build testsuite." >&2
 		exit 16
 	fi
-	fail=$( tail -1 failures.txt )
+	fail=$( tail -1 "${AUTOCONF_ROOT}/failures.txt" )
 	#
 	# Run failing tests first, then run all the tests
 	# (get quick results on 'known' failures)
 	#
 	if ! cd tests || ./testsuite $fail 1-599 ; then
-		echo "MAKE check of AUTOCONF tree failed." >&2
-		exit 16
+		echo "Some test suites failed." >&2
 	fi
+	cd ../ || exit 99
 fi
 if ! make install ; then
 	echo "MAKE install of AUTOCONF tree failed." >&2

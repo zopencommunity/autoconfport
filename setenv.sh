@@ -22,7 +22,7 @@ else
 	# Add 'zlib', 'Perl', 'Automake' and 'M4' to PATH, LIBPATH, PERL5LIB
 	#
 	fsroot=$( basename $HOME )                         
-	export ZLIB="/${fsroot}/zlibprod/lib"
+	export ZLIB_ROOT="/${fsroot}/zlibprod" 
 	export PERL_ROOT="/${fsroot}/perlprod"
 	export M4_ROOT="/${fsroot}/m4prod"
 	export AUTOMAKE_ROOT="/${fsroot}/automakeprod"
