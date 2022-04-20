@@ -19,9 +19,10 @@ else
 	export AUTOCONF_URL="http://ftp.gnu.org/gnu/autoconf/"
 
 	#
-	# Add 'Perl', 'Automake' and 'M4' to PATH, LIBPATH, PERL5LIB
+	# Add 'zlib', 'Perl', 'Automake' and 'M4' to PATH, LIBPATH, PERL5LIB
 	#
 	fsroot=$( basename $HOME )                         
+	export ZLIB="/${fsroot}/zlibprod/lib"
 	export PERL_ROOT="/${fsroot}/perlprod"
 	export M4_ROOT="/${fsroot}/m4prod"
 	export AUTOMAKE_ROOT="/${fsroot}/automakeprod"

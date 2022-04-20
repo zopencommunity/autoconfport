@@ -7,6 +7,7 @@
 #  - ensure you have Perl installed (Perl 5.006 or later)
 #  - ensure you have M4 installed
 #  - ensure you have access to c99
+#  - ensure you have access to libz.a 
 #  - either pre-install the AUTOCONF tar ball into AUTOCONF_ROOT or have curl/gunzip installed for auto-download
 #
 #set -x
@@ -37,6 +38,11 @@ fi
 
 if ! whence c99 >/dev/null ; then
 	echo "c99 required to build AUTOCONF. " >&2
+	exit 16
+fi
+
+if ! [ -f "${ZLIB}/libz.a" ]; then
+	echo "libz.a required for autoconf." >&2
 	exit 16
 fi
 
@@ -106,10 +112,10 @@ fi
 #
 # Setup the configuration so that the system search path looks in lib and include ahead of the standard C libraries
 #
-#export CONFIG_OPTS="--disable-dependency-tracking"
 export CONFIG_OPTS=""
+export LIBS="${ZLIB}"
 
-./configure CC=c99 CFLAGS="-qlanglvl=extc1x -qascii -D_OPEN_THREADS=3 -D_UNIX03_SOURCE=1 -DNSIG=39 -qnose -I${AUTOCONF_ROOT}/${AUTOCONF_VRM}/lib,${DELTA_ROOT}/include,/usr/include" "${CONFIG_OPTS}" --prefix="${AUTOCONF_PROD}"
+./configure CC=c99 CFLAGS="-qlanglvl=extc1x -qascii -D_OPEN_THREADS=3 -D_UNIX03_SOURCE=1 -DNSIG=39" "${CONFIG_OPTS}" --prefix="${AUTOCONF_PROD}"
 if [ $? -gt 0 ]; then
 	echo "Configure of AUTOCONF tree failed." >&2
 	exit 16
