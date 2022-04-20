@@ -121,6 +121,7 @@ if [ $? -gt 0 ]; then
 	exit 16
 fi
 
+unset LIBS
 cd "${AUTOCONF_ROOT}/${AUTOCONF_VRM}"
 if ! make ; then
 	echo "MAKE of AUTOCONF tree failed." >&2
@@ -139,10 +140,32 @@ if ! ./runexamples.sh; then
 	exit 16
 fi
 
+#
+# Run test cases
+#
 cd "${AUTOCONF_ROOT}/${AUTOCONF_VRM}"
-if ! make check ; then
-	echo "MAKE check of AUTOCONF tree failed." >&2
-	exit 16
+export LIBS="${ZLIB}"
+
+# Could use 'make check' but for now, run the tests using testsuite directly
+if false ; then
+	if ! make check ; then
+		echo "MAKE check of AUTOCONF tree failed." >&2
+		exit 16
+	fi
+else
+	if ! make tests/testsuite ; then
+		echo "Unable to build testsuite." >&2
+		exit 16
+	fi
+	fail=$( tail -1 failures.txt )
+	#
+	# Run failing tests first, then run all the tests
+	# (get quick results on 'known' failures)
+	#
+	if ! cd tests || ./testsuite $fail 1-599 ; then
+		echo "MAKE check of AUTOCONF tree failed." >&2
+		exit 16
+	fi
 fi
 if ! make install ; then
 	echo "MAKE install of AUTOCONF tree failed." >&2
