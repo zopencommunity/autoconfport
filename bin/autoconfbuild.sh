@@ -113,8 +113,9 @@ fi
 # Setup the configuration so that the system search path looks in lib and include ahead of the standard C libraries
 #
 export CONFIG_OPTS=""
-
-./configure CC=xlclang CFLAGS="-Wc,lp64 -Wl,lp64 -qascii -D_OPEN_THREADS=3 -D_UNIX03_SOURCE=1 -DNSIG=39 -qnose -I${ZLIB_ROOT}/include,/usr/include" "${CONFIG_OPTS}" --prefix="${AUTOCONF_PROD}"
+export CC=xlclang
+export CFLAGS="-Wc,lp64 -Wl,lp64 -qascii -D_OPEN_THREADS=3 -D_UNIX03_SOURCE=1 -DNSIG=39 -qnose -I${ZLIB_ROOT}/include,/usr/include"
+./configure "${CONFIG_OPTS}" --prefix="${AUTOCONF_PROD}"
 if [ $? -gt 0 ]; then
 	echo "Configure of AUTOCONF tree failed." >&2
 	exit 16
