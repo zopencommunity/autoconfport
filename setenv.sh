@@ -26,9 +26,15 @@ else
 	export PERL_ROOT="/${fsroot}/perlprod"
 	export M4_ROOT="/${fsroot}/m4prod"
 	export AUTOMAKE_ROOT="/${fsroot}/automakeprod"
-	export PERLLIB=$( cd ${PERL_ROOT}/lib/perl5/*/os390/CORE; echo $PWD )
-	export LIBPATH="${PERLLIB}:${LIBPATH}"
 	export PATH="${M4_ROOT}/bin:${PERL_ROOT}/bin:${AUTOMAKE_ROOT}/bin:$PATH"
+
+        for libperl in $(find "${PERL_ROOT}" -name "libperl.so"); do
+        	lib=$(dirname "${libperl}")
+		export LIBPATH="${lib}:${LIBPATH}"
+		break
+        done
+	export PERL5LIB_ROOT=$( cd ${PERL_ROOT}/lib/perl5/5*; echo $PWD )
+        export PERL5LIB="${PERL5LIB_ROOT}:${PERL5LIB_ROOT}/os390"
 
 	export AUTOCONF_PROD="/${fsroot}/autoconfprod"     
 fi
