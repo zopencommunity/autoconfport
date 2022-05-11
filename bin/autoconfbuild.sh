@@ -130,15 +130,6 @@ fi
 cd "${DELTA_ROOT}/tests"
 export PATH="${AUTOCONF_ROOT}/${AUTOCONF_VRM}/src:${PATH}"
 
-if ! ./runbasic.sh ; then
-	echo "Basic test of AUTOCONF failed." >&2
-	exit 16
-fi
-if ! ./runexamples.sh; then
-	echo "Example tests of AUTOCONF failed." >&2
-	exit 16
-fi
-
 #
 # Run test cases
 #
