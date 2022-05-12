@@ -114,7 +114,8 @@ fi
 #
 export CONFIG_OPTS=""
 export CC=xlclang
-export CFLAGS="-Wc,lp64 -Wl,lp64 -qascii -D_OPEN_THREADS=3 -D_UNIX03_SOURCE=1 -DNSIG=39 -qnose -I${ZLIB_ROOT}/include,/usr/include"
+export CFLAGS="-std=gnu11 -D_ALL_SOURCE -qASCII -q64 -D_LARGE_TIME_API -D_OPEN_MSGQ_EXT -D_OPEN_SYS_FILE_EXT=1 -D_OPEN_SYS_SOCK_IPV6 -DPATH_MAX=1024 -D_UNIX03_SOURCE -D_UNIX03_THREADS -D_UNIX03_WITHDRAWN -D_XOPEN_SOURCE=600 -D_XOPEN_SOURCE_EXTENDED -qnose -I${ZLIB_ROOT}/include,/usr/include" 
+export LDFLAGS='-q64'
 ./configure "${CONFIG_OPTS}" --prefix="${AUTOCONF_PROD}"
 if [ $? -gt 0 ]; then
 	echo "Configure of AUTOCONF tree failed." >&2

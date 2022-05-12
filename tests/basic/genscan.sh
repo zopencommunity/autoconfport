@@ -1,9 +1,10 @@
 #!/bin/sh
 export PATH=$HOME/zot/prod/autoconf/bin:$PATH
-
-# Remove any previously	generated files	
-rm -f autoscan.log config.h config.h.in config.log config.status configure configure.ac hw.c hw.o hw
-rm -rf autom4te.cache
+. $HOME/zot/prod/perl/.env
+export CC=xlclang
+export CXX=xlclang++
+mydir=$( cd $( dirname $0 ); echo $PWD )
+${mydir}/cleanup.sh
 
 cat <<zz >hw.c
 #include "config.h"
