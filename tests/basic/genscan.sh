@@ -30,7 +30,6 @@ cat configure.scan | awk '/AC_PROG_CC/ { print; print "AC_C_BACKSLASH_A"; next }
 autoheader
 autoconf
 ./configure
-mv config.h.in config.h
 
 cc -ohw hw.c
 ./hw
