@@ -1,0 +1,22 @@
+diff --git a/configure b/configure
+index a7881a1..15e8dff 100755
+--- a/configure
++++ b/configure
+@@ -1671,7 +1671,7 @@ printf "%s\n" "$as_me: WARNING: cache variable $ac_var contains a newline" >&2;}
+     rm -f -r conftest* confdefs* conf$$* $ac_clean_files &&
+     exit $exit_status
+ ' 0
+-for ac_signal in 1 2 13 15; do
++for ac_signal in HUP INT PIPE TERM; do
+   trap 'ac_signal='$ac_signal'; as_fn_exit 1' $ac_signal
+ done
+ ac_signal=0
+@@ -4223,7 +4223,7 @@ $debug ||
+   : "${ac_tmp:=$tmp}"
+   { test ! -d "$ac_tmp" || rm -fr "$ac_tmp"; } && exit $exit_status
+ ' 0
+-  trap 'as_fn_exit 1' 1 2 13 15
++  trap 'as_fn_exit 1' HUP INT PIPE TERM
+ }
+ # Create a (secure) tmp directory for tmp files.
+ 

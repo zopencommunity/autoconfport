@@ -1,0 +1,14 @@
+diff --git a/build-aux/config.guess b/build-aux/config.guess
+index 1972fda..7e4c7ec 100755
+--- a/build-aux/config.guess
++++ b/build-aux/config.guess
+@@ -96,7 +96,8 @@ fi
+ 
+ tmp=
+ # shellcheck disable=SC2172
+-trap 'test -z "$tmp" || rm -fr "$tmp"' 0 1 2 13 15
++#trap 'test -z "$tmp" || rm -fr "$tmp"' 0 1 2 13 15
++trap 'test -z "$tmp" || rm -fr "$tmp"' 0 HUP INT PIPE TERM 
+ 
+ set_cc_for_build() {
+     # prevent multiple calls if $tmp is already set
