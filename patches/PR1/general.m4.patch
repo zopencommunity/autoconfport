@@ -1,0 +1,13 @@
+diff --git a/lib/autoconf/general.m4 b/lib/autoconf/general.m4
+index 053130b..b9ac184 100644
+--- a/lib/autoconf/general.m4
++++ b/lib/autoconf/general.m4
+@@ -1367,7 +1367,7 @@ trap 'exit_status=$?
+     rm -f -r conftest* confdefs* conf$[$]* $ac_clean_files &&
+     exit $exit_status
+ ' 0
+-for ac_signal in 1 2 13 15; do
++for ac_signal in HUP INT PIPE TERM; do
+   trap 'ac_signal='$ac_signal'; AS_EXIT([1])' $ac_signal
+ done
+ ac_signal=0
