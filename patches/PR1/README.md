@@ -5,6 +5,11 @@ The fix is to use SIGxxx instead of an integer. This change is made in:
 - general.m4.patch
 - status.m4.patch
 
+The debug compiler is run to validate it works as part of configuration, but it 
+leaves behind a .dbg file. Changes are made to clean this file up along with 
+other files like the .o and .beam files 
+- general.m4.patch
+
 There is a check for an error message to match a specific format, but on z/OS, we 
 precede error messages with an error number so they can be looked up in the online 
 manuals. To fix this, we replace EDC[0-9][0-9][0-9][0-9]I with nothing so that the 
