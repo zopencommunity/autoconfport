@@ -1,5 +1,5 @@
 diff --git a/lib/autoconf/general.m4 b/lib/autoconf/general.m4
-index 053130b..b9ac184 100644
+index 053130b..c78e0bd 100644
 --- a/lib/autoconf/general.m4
 +++ b/lib/autoconf/general.m4
 @@ -1367,7 +1367,7 @@ trap 'exit_status=$?
@@ -11,3 +11,66 @@ index 053130b..b9ac184 100644
    trap 'ac_signal='$ac_signal'; AS_EXIT([1])' $ac_signal
  done
  ac_signal=0
+@@ -2803,7 +2803,7 @@ AC_DEFUN([AC_EGREP_HEADER],
+ # Shell function body for _AC_COMPILE_IFELSE.
+ m4_define([_AC_COMPILE_IFELSE_BODY],
+ [  AS_LINENO_PUSH([$[]1])
+-  rm -f conftest.$ac_objext conftest.beam
++  rm -f conftest.$ac_objext conftest.dbg conftest.beam 
+   AS_IF([_AC_DO_STDERR($ac_compile) && {
+ 	 test -z "$ac_[]_AC_LANG_ABBREV[]_werror_flag" ||
+ 	 test ! -s conftest.err
+@@ -2827,7 +2827,7 @@ AC_DEFUN([_AC_COMPILE_IFELSE],
+   [$0_BODY])]dnl
+ [m4_ifvaln([$1], [AC_LANG_CONFTEST([$1])])]dnl
+ [AS_IF([ac_fn_[]_AC_LANG_ABBREV[]_try_compile "$LINENO"], [$2], [$3])
+-rm -f core conftest.err conftest.$ac_objext conftest.beam[]m4_ifval([$1], [ conftest.$ac_ext])[]dnl
++rm -f core conftest.err conftest.$ac_objext conftest.dbg conftest.beam[]m4_ifval([$1], [ conftest.$ac_ext])[]dnl
+ ])# _AC_COMPILE_IFELSE
+ 
+ 
+@@ -2859,7 +2859,7 @@ AU_DEFUN([AC_TRY_COMPILE],
+ # Shell function body for _AC_LINK_IFELSE.
+ m4_define([_AC_LINK_IFELSE_BODY],
+ [  AS_LINENO_PUSH([$[]1])
+-  rm -f conftest.$ac_objext conftest.beam conftest$ac_exeext
++  rm -f conftest.$ac_objext conftest.dbg conftest.beam conftest$ac_exeext
+   AS_IF([_AC_DO_STDERR($ac_link) && {
+ 	 test -z "$ac_[]_AC_LANG_ABBREV[]_werror_flag" ||
+ 	 test ! -s conftest.err
+@@ -2874,7 +2874,7 @@ m4_define([_AC_LINK_IFELSE_BODY],
+   # created by the PGI compiler (conftest_ipa8_conftest.oo), as it would
+   # interfere with the next link command; also delete a directory that is
+   # left behind by Apple's compiler.  We do this before executing the actions.
+-  rm -rf conftest.dSYM conftest_ipa8_conftest.oo
++  rm -rf conftest.dSYM conftest_ipa8_conftest.oo conftest.dbg
+   AS_LINENO_POP
+   AS_SET_STATUS([$ac_retval])
+ ])# _AC_LINK_IFELSE_BODY
+@@ -2898,7 +2898,7 @@ AC_DEFUN([_AC_LINK_IFELSE],
+   [$0_BODY])]dnl
+ [m4_ifvaln([$1], [AC_LANG_CONFTEST([$1])])]dnl
+ [AS_IF([ac_fn_[]_AC_LANG_ABBREV[]_try_link "$LINENO"], [$2], [$3])
+-rm -f core conftest.err conftest.$ac_objext conftest.beam \
++rm -f core conftest.err conftest.$ac_objext conftest.dbg conftest.beam \
+     conftest$ac_exeext[]m4_ifval([$1], [ conftest.$ac_ext])[]dnl
+ ])# _AC_LINK_IFELSE
+ 
+@@ -2946,7 +2946,7 @@ m4_define([_AC_RUN_IFELSE_BODY],
+       [AS_ECHO(["$as_me: program exited with status $ac_status"]) >&AS_MESSAGE_LOG_FD
+        _AC_MSG_LOG_CONFTEST
+        ac_retval=$ac_status])
+-  rm -rf conftest.dSYM conftest_ipa8_conftest.oo
++  rm -rf conftest.dSYM conftest_ipa8_conftest.oo conftest.dbg
+   AS_LINENO_POP
+   AS_SET_STATUS([$ac_retval])
+ ])# _AC_RUN_IFELSE_BODY
+@@ -2968,7 +2968,7 @@ AC_DEFUN([_AC_RUN_IFELSE],
+ [m4_ifvaln([$1], [AC_LANG_CONFTEST([$1])])]dnl
+ [AS_IF([ac_fn_[]_AC_LANG_ABBREV[]_try_run "$LINENO"], [$2], [$3])
+ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+-  conftest.$ac_objext conftest.beam[]m4_ifval([$1], [ conftest.$ac_ext])[]dnl
++  conftest.$ac_objext conftest.dbg conftest.beam[]m4_ifval([$1], [ conftest.$ac_ext])[]dnl
+ ])# _AC_RUN_IFELSE
+ 
+ # AC_RUN_IFELSE(PROGRAM,

@@ -1,8 +1,10 @@
 #!/bin/sh
 export PATH=$HOME/zot/prod/autoconf/bin:$PATH
 . $HOME/zot/prod/perl/.env
+unset CC
+unset CXX
 export CC=xlclang
-export CXX=xlclang++
+#export CXX=xlclang++
 
 mydir=$( cd $( dirname $0 ); echo $PWD )
 ${mydir}/cleanup.sh
@@ -26,11 +28,14 @@ int main() {
 }
 zz
 
-autoscan -v
+#autoscan -v
 cat configure.scan | awk '/AC_PROG_CC/ { print; print "AC_C_BACKSLASH_A"; next } // { print }' >configure.ac
 autoheader
 autoconf
-./configure
+./configure -C
+
+# Do it again
+./configure -C
 
 "${CC}" -ohw hw.c
 ./hw
