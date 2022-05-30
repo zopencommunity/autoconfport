@@ -1,0 +1,13 @@
+diff --git a/lib/autoconf/lang.m4 b/lib/autoconf/lang.m4
+index daa8841..c473424 100644
+--- a/lib/autoconf/lang.m4
++++ b/lib/autoconf/lang.m4
+@@ -678,7 +678,7 @@ ac_exeext=$EXEEXT
+ AC_LANG_CONFTEST([_AC_LANG_IO_PROGRAM])
+ ac_clean_files="$ac_clean_files conftest.out"
+ _AC_COMPILER_EXEEXT_CROSS
+-rm -f conftest.$ac_ext conftest$ac_cv_exeext conftest.out
++rm -f conftest.$ac_ext conftest$ac_cv_exeext conftest.out conftest.o
+ ac_clean_files=$ac_clean_files_save
+ ])# _AC_COMPILER_EXEEXT
+ 
