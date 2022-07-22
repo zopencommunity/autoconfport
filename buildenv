@@ -8,6 +8,7 @@ if ! [ -f ./buildenv ]; then
 fi
 
 # Note: requires zlib to be installed into system as pre-req
+
 export ZOPEN_ROOT="${PWD}"
 export ZOPEN_TYPE="TARBALL"
 export ZOPEN_TARBALL_URL="https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz"
