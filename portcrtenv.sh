@@ -8,5 +8,7 @@ if ! [ -f ./.env ]; then
 fi
 mydir="\${PWD}"
 export PATH="\${mydir}/bin:\$PATH"
+export autom4te_perllibdir=${install_dir}/share/autoconf
+export AC_MACRODIR=${install_dir}/share/autoconf
 zz
 exit 0
