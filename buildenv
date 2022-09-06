@@ -21,3 +21,9 @@ export autom4te_perllibdir=\${PWD}/share/autoconf
 export AC_MACRODIR=\${PWD}/share/autoconf
 EOF
 }
+
+zopen_check_results()
+{
+  return 3
+}
+
