@@ -14,7 +14,7 @@ export ZOPEN_EXTRA_CFLAGS=""
 export ZOPEN_EXTRA_LDFLAGS=""
 export PERL="/bin/env perl"
 
-zopen_append_envs()
+zopen_append_to_env()
 {
 cat <<EOF
 export autom4te_perllibdir=\${PWD}/share/autoconf
