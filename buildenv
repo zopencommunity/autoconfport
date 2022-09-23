@@ -24,6 +24,27 @@ EOF
 
 zopen_check_results()
 {
-  return 3 # non-functional
+  chk="$2_check.log"
+
+  ac_success=$(grep -c -E '^ *[0-9]+\: .{48}ok$' ${chk})
+  ac_failures=$(grep -c -E '^ *[0-9]+\: .{48}FAILED' ${chk})
+  ac_expectedFailures=$(grep -c -E '^ *[0-9]+\: .{48}expected failure' ${chk})
+  ac_skipped=$(grep -c -E '^ *[0-9]+\: .{48}skipped' ${chk})
+  ac_totalTests=$(grep -c -E '^ *[0-9]+\: .{48}' ${chk})
+
+  let t=${ac_success}+${ac_failures}+${ac_expectedFailures}+${ac_skipped}
+  if [ ${t} -ne ${ac_totalTests} ] ; then
+    echo "Failed to calculate number of test failures."
+  fi
+
+  let actualFailures=${ac_failures}+${ac_expectedFailures}
+  let totalTests=${ac_totalTests}
+  let expectedFailures=12
+
+  cat <<ZZ
+actualFailures:$actualFailures
+totalTests:$totalTests
+expectedFailures:12
+ZZ
 }
 
