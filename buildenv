@@ -5,10 +5,10 @@
 # Note: requires zlib to be installed into system as pre-req
 export ZOPEN_TYPE="TARBALL"
 export ZOPEN_TARBALL_URL="https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz"
-export ZOPEN_TARBALL_DEPS="curl gzip make m4 perl zlib diffutils"
+export ZOPEN_TARBALL_DEPS="curl gzip make m4 perl zlib"
 
 export ZOPEN_GIT_URL="https://github.com/autotools-mirror/autoconf.git"
-export ZOPEN_GIT_DEPS="git make m4 perl autoconf automake help2man makeinfo xz zlib diffutils"
+export ZOPEN_GIT_DEPS="git make m4 perl autoconf automake help2man makeinfo xz zlib"
 
 export ZOPEN_EXTRA_CFLAGS=""
 export ZOPEN_EXTRA_LDFLAGS=""
