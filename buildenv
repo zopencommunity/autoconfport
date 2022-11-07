@@ -34,7 +34,7 @@ EOF
 
 zopen_check_results()
 {
-  chk="$2_check.log"
+  chk="$1/$2_check.log"
 
   ac_success=$(grep -c -E '^ *[0-9]+\: .{48}ok$' ${chk})
   ac_failures=$(grep -c -E '^ *[0-9]+\: .{48}FAILED' ${chk})
