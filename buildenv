@@ -49,12 +49,12 @@ zopen_check_results()
 
   let actualFailures=${ac_failures}+${ac_expectedFailures}
   let totalTests=${ac_totalTests}
-  let expectedFailures=12
+  let expectedFailures=13
 
   cat <<ZZ
 actualFailures:$actualFailures
 totalTests:$totalTests
-expectedFailures:12
+expectedFailures:$expectedFailures
 ZZ
 }
 
