@@ -61,3 +61,5 @@ tests/basic/config.status
 tests/basic/hello
 tests/basic/hello.dbg
 tests/basic/hello.o
+install/
+log/
