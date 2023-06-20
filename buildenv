@@ -58,3 +58,7 @@ expectedFailures:$expectedFailures
 ZZ
 }
 
+zopen_get_version()
+{
+  cat doc/version.texi | tail -1 | cut -d" " -f3
+}
