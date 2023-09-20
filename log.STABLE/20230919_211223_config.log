@@ -1,0 +1,34 @@
+checking for a BSD-compatible install... /home/fultonm/zopen/usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... ./build-aux/install-sh -c -d
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking build system type... i370-ibm-openedition
+checking host system type... i370-ibm-openedition
+configure: autobuild project... GNU Autoconf
+configure: autobuild revision... 2.71
+configure: autobuild hostname... ZOSCAN2B.pok.stglabs.ibm.com
+configure: autobuild timestamp... 20230920T011229Z
+checking for a shell whose -n mode is known to work... bash
+checking for characters that cannot appear in file names... none
+checking whether directories can have trailing spaces... yes
+checking for expr... /bin/expr
+checking for GNU M4 that supports accurate traces... /home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4
+checking whether /home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4 accepts --gnu... yes
+checking how m4 supports trace files... --debugfile
+checking for perl... /bin/env perl
+checking whether /bin/env perl Fcntl::flock is implemented... yes
+checking for emacs... no
+checking for xemacs... no
+checking for emacs... no
+checking where .elc files should go... ${datadir}/emacs/site-lisp
+checking for grep that handles long lines and -e... /home/fultonm/zopen/usr/bin/grep
+checking for egrep... /home/fultonm/zopen/usr/bin/grep -E
+checking for a sed that does not truncate output... /home/fultonm/zopen/usr/bin/sed
+checking whether make is case sensitive... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating tests/atlocal
+config.status: creating Makefile
+config.status: executing tests/atconfig commands

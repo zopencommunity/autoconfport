@@ -1,0 +1,93 @@
+make  install-am
+make[1]: Entering directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'
+if test 'no' != no; then \
+  am__dir=. am__subdir_includes=''; \
+  case lib/emacs/autoconf-mode.elc in */*) \
+    am__dir=`echo 'lib/emacs/autoconf-mode.elc' | sed 's,/[^/]*$,,'`; \
+    am__subdir_includes="-L $am__dir -L ./$am__dir"; \
+  esac; \
+  test -d "$am__dir" || ./build-aux/install-sh -c -d "$am__dir" || exit 1; \
+  no --batch \
+      \
+    $am__subdir_includes -L . -L . \
+    --eval '(if (boundp (quote byte-compile-dest-file-function)) (setq byte-compile-dest-file-function (lambda (_) "lib/emacs/autoconf-mode.elc")) (defun byte-compile-dest-file (_) "lib/emacs/autoconf-mode.elc") )' \
+    -f batch-byte-compile 'lib/emacs/autoconf-mode.el'; \
+else :; fi
+if test 'no' != no; then \
+  am__dir=. am__subdir_includes=''; \
+  case lib/emacs/autotest-mode.elc in */*) \
+    am__dir=`echo 'lib/emacs/autotest-mode.elc' | sed 's,/[^/]*$,,'`; \
+    am__subdir_includes="-L $am__dir -L ./$am__dir"; \
+  esac; \
+  test -d "$am__dir" || ./build-aux/install-sh -c -d "$am__dir" || exit 1; \
+  no --batch \
+      \
+    $am__subdir_includes -L . -L . \
+    --eval '(if (boundp (quote byte-compile-dest-file-function)) (setq byte-compile-dest-file-function (lambda (_) "lib/emacs/autotest-mode.elc")) (defun byte-compile-dest-file (_) "lib/emacs/autotest-mode.elc") )' \
+    -f batch-byte-compile 'lib/emacs/autotest-mode.el'; \
+else :; fi
+make[2]: Entering directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autoconf'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autotest'
+if test 'no' != no; then \
+  am__dir=. am__subdir_includes=''; \
+  case lib/emacs/autoconf-mode.elc in */*) \
+    am__dir=`echo 'lib/emacs/autoconf-mode.elc' | sed 's,/[^/]*$,,'`; \
+    am__subdir_includes="-L $am__dir -L ./$am__dir"; \
+  esac; \
+  test -d "$am__dir" || ./build-aux/install-sh -c -d "$am__dir" || exit 1; \
+  no --batch \
+      \
+    $am__subdir_includes -L . -L . \
+    --eval '(if (boundp (quote byte-compile-dest-file-function)) (setq byte-compile-dest-file-function (lambda (_) "lib/emacs/autoconf-mode.elc")) (defun byte-compile-dest-file (_) "lib/emacs/autoconf-mode.elc") )' \
+    -f batch-byte-compile 'lib/emacs/autoconf-mode.el'; \
+else :; fi
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/build-aux'
+if test 'no' != no; then \
+  am__dir=. am__subdir_includes=''; \
+  case lib/emacs/autotest-mode.elc in */*) \
+    am__dir=`echo 'lib/emacs/autotest-mode.elc' | sed 's,/[^/]*$,,'`; \
+    am__subdir_includes="-L $am__dir -L ./$am__dir"; \
+  esac; \
+  test -d "$am__dir" || ./build-aux/install-sh -c -d "$am__dir" || exit 1; \
+  no --batch \
+      \
+    $am__subdir_includes -L . -L . \
+    --eval '(if (boundp (quote byte-compile-dest-file-function)) (setq byte-compile-dest-file-function (lambda (_) "lib/emacs/autotest-mode.elc")) (defun byte-compile-dest-file (_) "lib/emacs/autotest-mode.elc") )' \
+    -f batch-byte-compile 'lib/emacs/autotest-mode.el'; \
+else :; fi
+ /home/fultonm/zopen/usr/bin/install -c -m 644 lib/autotest/autotest.m4 lib/autotest/general.m4 lib/autotest/specific.m4 '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autotest'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/m4sugar'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 build-aux/config.guess build-aux/config.sub build-aux/install-sh '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/build-aux'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/Autom4te'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/info'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 lib/m4sugar/m4sugar.m4 lib/m4sugar/foreach.m4 lib/m4sugar/m4sh.m4 '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/m4sugar'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autoconf'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/man/man1'
+ /home/fultonm/zopen/usr/bin/install -c bin/autoconf bin/autoheader bin/autom4te bin/autoreconf bin/autoscan bin/autoupdate bin/ifnames '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 lib/autoconf/autoconf.m4f '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autoconf'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autoscan'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autotest'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 lib/autoscan/autoscan.list '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autoscan'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 lib/Autom4te/C4che.pm lib/Autom4te/ChannelDefs.pm lib/Autom4te/Channels.pm lib/Autom4te/Config.pm lib/Autom4te/Configure_ac.pm lib/Autom4te/FileUtils.pm lib/Autom4te/General.pm lib/Autom4te/Getopt.pm lib/Autom4te/Request.pm lib/Autom4te/XFile.pm '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/Autom4te'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 ./doc/autoconf.info ./doc/standards.info '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/info'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 lib/autoconf/autoconf.m4 lib/autoconf/general.m4 lib/autoconf/status.m4 lib/autoconf/oldnames.m4 lib/autoconf/specific.m4 lib/autoconf/autoheader.m4 lib/autoconf/autoupdate.m4 lib/autoconf/autotest.m4 lib/autoconf/autoscan.m4 lib/autoconf/lang.m4 lib/autoconf/c.m4 lib/autoconf/erlang.m4 lib/autoconf/fortran.m4 lib/autoconf/functions.m4 lib/autoconf/go.m4 lib/autoconf/headers.m4 lib/autoconf/types.m4 lib/autoconf/libs.m4 lib/autoconf/programs.m4 lib/autoconf/trailer.m4 '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autoconf'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 lib/autotest/autotest.m4f '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/autotest'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/m4sugar'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 lib/m4sugar/version.m4 lib/m4sugar/m4sugar.m4f lib/m4sugar/m4sh.m4f '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/m4sugar'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 lib/autom4te.cfg '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf'
+ install-info --info-dir='/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/info' '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/info/autoconf.info'
+ ./build-aux/install-sh -c -d '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 ./INSTALL '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf'
+ install-info --info-dir='/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/info' '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/info/standards.info'
+ /home/fultonm/zopen/usr/bin/install -c -m 644 man/autoconf.1 man/autoheader.1 man/autom4te.1 man/autoreconf.1 man/autoscan.1 man/autoupdate.1 man/ifnames.1 '/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/man/man1'
+make  install-data-hook
+make[3]: Entering directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'
+for s in build-aux/config.guess build-aux/config.sub build-aux/install-sh; do \
+  chmod +x "/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf/$s"; \
+done
+make[3]: Leaving directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'
+make[2]: Leaving directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'
+make[1]: Leaving directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'

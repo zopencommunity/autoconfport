@@ -1,0 +1,197 @@
+make  all-am
+make[1]: Entering directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'
+rm -f bin/autom4te bin/autom4te.tmp
+make[2]: Entering directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'
+rm -f lib/autom4te.cfg lib/autom4te.cfg-t
+./build-aux/install-sh -c -d bin
+./build-aux/install-sh -c -d lib
+srcdir=''; \
+  test -f ./bin/autom4te.in || srcdir=./; \
+  sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/bin/env perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin|g' -e 's|@pkgdatadir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf|g' -e 's|@prefix[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|2021|g' -e 's|@VERSION[@]|2.71|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from bin/autom4te.in; do not edit by hand.|g' ${srcdir}bin/autom4te.in >bin/autom4te.tmp
+sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/bin/env perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin|g' -e 's|@pkgdatadir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf|g' -e 's|@prefix[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|2021|g' -e 's|@VERSION[@]|2.71|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from lib/autom4te.cfg.in; do not edit by hand.|g' ./lib/autom4te.in >lib/autom4te.cfg-t
+./build-aux/install-sh -c -d lib/m4sugar
+rm -f bin/autoheader bin/autoheader.tmp
+:;{ \
+  echo '# This file is part of -*- Autoconf -*-.' && \
+  echo '# Version of Autoconf.' && \
+  echo '# Copyright (C) 1999, 2000, 2001, 2002, 2006, 2007, 2009' && \
+  echo '# Free Software Foundation, Inc.' && \
+  echo  &&\
+  echo 'm4_define([m4_PACKAGE_NAME],      [GNU Autoconf])' && \
+  echo 'm4_define([m4_PACKAGE_TARNAME],   [autoconf])' && \
+  echo 'm4_define([m4_PACKAGE_VERSION],   [2.71])' && \
+  echo 'm4_define([m4_PACKAGE_STRING],    [GNU Autoconf 2.71])' && \
+  echo 'm4_define([m4_PACKAGE_BUGREPORT], [bug-autoconf@gnu.org])' && \
+  echo 'm4_define([m4_PACKAGE_URL],       [https://www.gnu.org/software/autoconf/])' && \
+  echo 'm4_define([m4_PACKAGE_YEAR],      [2021])'; \
+} > lib/m4sugar/version.m4-t
+./build-aux/install-sh -c -d bin
+chmod a-w lib/autom4te.cfg-t
+srcdir=''; \
+  test -f ./bin/autoheader.in || srcdir=./; \
+  sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/bin/env perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin|g' -e 's|@pkgdatadir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf|g' -e 's|@prefix[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|2021|g' -e 's|@VERSION[@]|2.71|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from bin/autoheader.in; do not edit by hand.|g' ${srcdir}bin/autoheader.in >bin/autoheader.tmp
+mv -f lib/autom4te.cfg-t lib/autom4te.cfg
+chmod +x bin/autom4te.tmp
+rm -f bin/autoreconf bin/autoreconf.tmp
+chmod a-w bin/autom4te.tmp
+./build-aux/install-sh -c -d bin
+chmod +x bin/autoheader.tmp
+srcdir=''; \
+  test -f ./bin/autoreconf.in || srcdir=./; \
+  sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/bin/env perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin|g' -e 's|@pkgdatadir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf|g' -e 's|@prefix[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|2021|g' -e 's|@VERSION[@]|2.71|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from bin/autoreconf.in; do not edit by hand.|g' ${srcdir}bin/autoreconf.in >bin/autoreconf.tmp
+chmod a-w bin/autoheader.tmp
+mv bin/autom4te.tmp bin/autom4te
+mv bin/autoheader.tmp bin/autoheader
+rm -f bin/autoscan bin/autoscan.tmp
+make[2]: Leaving directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'
+mv lib/m4sugar/version.m4-t lib/m4sugar/version.m4
+./build-aux/install-sh -c -d bin
+srcdir=''; \
+  test -f ./bin/autoscan.in || srcdir=./; \
+  sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/bin/env perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin|g' -e 's|@pkgdatadir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf|g' -e 's|@prefix[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|2021|g' -e 's|@VERSION[@]|2.71|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from bin/autoscan.in; do not edit by hand.|g' ${srcdir}bin/autoscan.in >bin/autoscan.tmp
+chmod +x bin/autoreconf.tmp
+rm -f bin/autoupdate bin/autoupdate.tmp
+chmod a-w bin/autoreconf.tmp
+./build-aux/install-sh -c -d bin
+mv bin/autoreconf.tmp bin/autoreconf
+srcdir=''; \
+  test -f ./bin/autoupdate.in || srcdir=./; \
+  sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/bin/env perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin|g' -e 's|@pkgdatadir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf|g' -e 's|@prefix[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|2021|g' -e 's|@VERSION[@]|2.71|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from bin/autoupdate.in; do not edit by hand.|g' ${srcdir}bin/autoupdate.in >bin/autoupdate.tmp
+rm -f bin/ifnames bin/ifnames.tmp
+chmod +x bin/autoscan.tmp
+./build-aux/install-sh -c -d bin
+chmod a-w bin/autoscan.tmp
+srcdir=''; \
+  test -f ./bin/ifnames.in || srcdir=./; \
+  sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/bin/env perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin|g' -e 's|@pkgdatadir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf|g' -e 's|@prefix[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|2021|g' -e 's|@VERSION[@]|2.71|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from bin/ifnames.in; do not edit by hand.|g' ${srcdir}bin/ifnames.in >bin/ifnames.tmp
+mv bin/autoscan.tmp bin/autoscan
+autom4te_perllibdir='.'/lib AUTOM4TE_CFG='lib/autom4te.cfg'         bin/autom4te -B ''lib -B '.'/lib         --language=M4sh ./tests/wrapper.as -o tests/wrapper.in
+chmod +x bin/autoupdate.tmp
+if test 'no' != no; then \
+  am__dir=. am__subdir_includes=''; \
+  case lib/emacs/autoconf-mode.elc in */*) \
+    am__dir=`echo 'lib/emacs/autoconf-mode.elc' | sed 's,/[^/]*$,,'`; \
+    am__subdir_includes="-L $am__dir -L ./$am__dir"; \
+  esac; \
+  test -d "$am__dir" || ./build-aux/install-sh -c -d "$am__dir" || exit 1; \
+  no --batch \
+      \
+    $am__subdir_includes -L . -L . \
+    --eval '(if (boundp (quote byte-compile-dest-file-function)) (setq byte-compile-dest-file-function (lambda (_) "lib/emacs/autoconf-mode.elc")) (defun byte-compile-dest-file (_) "lib/emacs/autoconf-mode.elc") )' \
+    -f batch-byte-compile 'lib/emacs/autoconf-mode.el'; \
+else :; fi
+chmod a-w bin/autoupdate.tmp
+chmod +x bin/ifnames.tmp
+mv bin/autoupdate.tmp bin/autoupdate
+chmod a-w bin/ifnames.tmp
+if test 'no' != no; then \
+  am__dir=. am__subdir_includes=''; \
+  case lib/emacs/autotest-mode.elc in */*) \
+    am__dir=`echo 'lib/emacs/autotest-mode.elc' | sed 's,/[^/]*$,,'`; \
+    am__subdir_includes="-L $am__dir -L ./$am__dir"; \
+  esac; \
+  test -d "$am__dir" || ./build-aux/install-sh -c -d "$am__dir" || exit 1; \
+  no --batch \
+      \
+    $am__subdir_includes -L . -L . \
+    --eval '(if (boundp (quote byte-compile-dest-file-function)) (setq byte-compile-dest-file-function (lambda (_) "lib/emacs/autotest-mode.elc")) (defun byte-compile-dest-file (_) "lib/emacs/autotest-mode.elc") )' \
+    -f batch-byte-compile 'lib/emacs/autotest-mode.el'; \
+else :; fi
+mv bin/ifnames.tmp bin/ifnames
+./build-aux/install-sh -c -d lib/autoconf
+./build-aux/install-sh -c -d lib/autoscan
+lang=`echo 'lib/autoconf/autoconf' | sed 's,.*/,,'` \
+  && if test $lang = autoconf; then \
+       lang=autoconf-without-aclocal-m4; \
+     else :; fi \
+  && autom4te_perllibdir='.'/lib AUTOM4TE_CFG='lib/autom4te.cfg'         bin/autom4te -B ''lib -B '.'/lib         \
+	--language=$lang \
+	--freeze \
+	--output=lib/autoconf/autoconf.m4f
+echo '# Automatically Generated: do not edit this file' >lib/autoscan/autoscan.list
+./build-aux/install-sh -c -d lib/autotest
+sed '/^[#]/!q' ./lib/autoscan/autoscan.pre >>lib/autoscan/autoscan.list
+lang=`echo 'lib/autotest/autotest' | sed 's,.*/,,'` \
+  && if test $lang = autoconf; then \
+       lang=autoconf-without-aclocal-m4; \
+     else :; fi \
+  && autom4te_perllibdir='.'/lib AUTOM4TE_CFG='lib/autom4te.cfg'         bin/autom4te -B ''lib -B '.'/lib         \
+	--language=$lang \
+	--freeze \
+	--output=lib/autotest/autotest.m4f
+./build-aux/install-sh -c -d lib/m4sugar
+( \
+  sed -n '/^[^#]/p' ./lib/autoscan/autoscan.pre; \
+  autom4te_perllibdir='.'/lib AUTOM4TE_CFG='lib/autom4te.cfg'         bin/autom4te -B ''lib -B '.'/lib         --cache '' -M -l autoconf-without-aclocal-m4 \
+    -t'AN_OUTPUT:$1: $2		$3' \
+) | LC_ALL=C sort >>lib/autoscan/autoscan.list
+lang=`echo 'lib/m4sugar/m4sugar' | sed 's,.*/,,'` \
+  && if test $lang = autoconf; then \
+       lang=autoconf-without-aclocal-m4; \
+     else :; fi \
+  && autom4te_perllibdir='.'/lib AUTOM4TE_CFG='lib/autom4te.cfg'         bin/autom4te -B ''lib -B '.'/lib         \
+	--language=$lang \
+	--freeze \
+	--output=lib/m4sugar/m4sugar.m4f
+./build-aux/install-sh -c -d lib/m4sugar
+autom4te_perllibdir='.'/lib AUTOM4TE_CFG='lib/autom4te.cfg'         bin/autom4te -B ''lib -B '.'/lib         --language M4sh --cache '' \
+  --melt ./bin/autoconf.as -o bin/autoconf.in
+lang=`echo 'lib/m4sugar/m4sh' | sed 's,.*/,,'` \
+  && if test $lang = autoconf; then \
+       lang=autoconf-without-aclocal-m4; \
+     else :; fi \
+  && autom4te_perllibdir='.'/lib AUTOM4TE_CFG='lib/autom4te.cfg'         bin/autom4te -B ''lib -B '.'/lib         \
+	--language=$lang \
+	--freeze \
+	--output=lib/m4sugar/m4sh.m4f
+rm -f tests/autoconf tests/autoconf.tmp
+rm -f tests/autoheader tests/autoheader.tmp
+input=tests/wrapper.in \
+  && sed -e 's|@wrap_program[@]|autoconf|g' -e 's|@abs_top_srcdir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e 's|@abs_top_builddir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e "s|@configure_input[@]|Generated from $input.|g" tests/wrapper.in >tests/autoconf.tmp
+input=tests/wrapper.in \
+  && sed -e 's|@wrap_program[@]|autoheader|g' -e 's|@abs_top_srcdir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e 's|@abs_top_builddir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e "s|@configure_input[@]|Generated from $input.|g" tests/wrapper.in >tests/autoheader.tmp
+chmod +x tests/autoconf.tmp
+chmod +x tests/autoheader.tmp
+chmod a-w tests/autoconf.tmp
+chmod a-w tests/autoheader.tmp
+mv -f tests/autoconf.tmp tests/autoconf
+mv -f tests/autoheader.tmp tests/autoheader
+rm -f tests/autom4te tests/autom4te.tmp
+rm -f tests/autoreconf tests/autoreconf.tmp
+input=tests/wrapper.in \
+  && sed -e 's|@wrap_program[@]|autom4te|g' -e 's|@abs_top_srcdir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e 's|@abs_top_builddir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e "s|@configure_input[@]|Generated from $input.|g" tests/wrapper.in >tests/autom4te.tmp
+input=tests/wrapper.in \
+  && sed -e 's|@wrap_program[@]|autoreconf|g' -e 's|@abs_top_srcdir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e 's|@abs_top_builddir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e "s|@configure_input[@]|Generated from $input.|g" tests/wrapper.in >tests/autoreconf.tmp
+rm -f tests/autoscan tests/autoscan.tmp
+chmod +x tests/autoreconf.tmp
+input=tests/wrapper.in \
+  && sed -e 's|@wrap_program[@]|autoscan|g' -e 's|@abs_top_srcdir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e 's|@abs_top_builddir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e "s|@configure_input[@]|Generated from $input.|g" tests/wrapper.in >tests/autoscan.tmp
+chmod a-w tests/autoreconf.tmp
+chmod +x tests/autom4te.tmp
+mv -f tests/autoreconf.tmp tests/autoreconf
+chmod a-w tests/autom4te.tmp
+chmod +x tests/autoscan.tmp
+mv -f tests/autom4te.tmp tests/autom4te
+chmod a-w tests/autoscan.tmp
+rm -f tests/autoupdate tests/autoupdate.tmp
+mv -f tests/autoscan.tmp tests/autoscan
+input=tests/wrapper.in \
+  && sed -e 's|@wrap_program[@]|autoupdate|g' -e 's|@abs_top_srcdir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e 's|@abs_top_builddir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e "s|@configure_input[@]|Generated from $input.|g" tests/wrapper.in >tests/autoupdate.tmp
+rm -f tests/ifnames tests/ifnames.tmp
+chmod +x tests/autoupdate.tmp
+input=tests/wrapper.in \
+  && sed -e 's|@wrap_program[@]|ifnames|g' -e 's|@abs_top_srcdir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e 's|@abs_top_builddir[@]|/home/fultonm/zopen/dev/autoconfport/autoconf-2.71|g' -e "s|@configure_input[@]|Generated from $input.|g" tests/wrapper.in >tests/ifnames.tmp
+chmod a-w tests/autoupdate.tmp
+rm -f bin/autoconf bin/autoconf.tmp
+mv -f tests/autoupdate.tmp tests/autoupdate
+./build-aux/install-sh -c -d bin
+chmod +x tests/ifnames.tmp
+srcdir=''; \
+  test -f ./bin/autoconf.in || srcdir=./; \
+  sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/bin/env perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/bin|g' -e 's|@pkgdatadir[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71/share/autoconf|g' -e 's|@prefix[@]|/home/fultonm/zopen/usr/local/zopen/dev/autoconf/autoconf-2.71|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/home/fultonm/zopen/usr/local/zopen/m4/m4-1.4.19.20230908_202307.zos/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|2021|g' -e 's|@VERSION[@]|2.71|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from bin/autoconf.in; do not edit by hand.|g' ${srcdir}bin/autoconf.in >bin/autoconf.tmp
+chmod a-w tests/ifnames.tmp
+mv -f tests/ifnames.tmp tests/ifnames
+chmod +x bin/autoconf.tmp
+chmod a-w bin/autoconf.tmp
+mv bin/autoconf.tmp bin/autoconf
+make[1]: Leaving directory '/home/fultonm/zopen/dev/autoconfport/autoconf-2.71'
