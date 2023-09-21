@@ -3,16 +3,18 @@
 # Set up environment variables for general build tool to operate
 #
 # Note: requires zlib to be installed into system as pre-req
-export ZOPEN_TYPE="TARBALL"
-export ZOPEN_TARBALL_URL="https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz"
-export ZOPEN_TARBALL_DEPS="curl gzip make m4 perl zlib texinfo automake autoconf "
+export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz"
+export ZOPEN_STABLE_DEPS="curl gzip make m4 perl zlib texinfo automake autoconf "
 
-export ZOPEN_GIT_URL="https://github.com/autotools-mirror/autoconf.git"
-export ZOPEN_GIT_DEPS="git make m4 perl autoconf automake help2man texinfo xz zlib"
+export ZOPEN_DEV_URL="https://github.com/autotools-mirror/autoconf.git"
+export ZOPEN_DEV_DEPS="git make m4 perl autoconf automake help2man texinfo xz zlib"
 
 export ZOPEN_EXTRA_CFLAGS=""
 export ZOPEN_EXTRA_LDFLAGS=""
 export PERL="/bin/env perl"
+
+export ZOPEN_RUNTIME_DEPS="perl m4"
 
 export ZOPEN_CHECK_TIMEOUT=36000 # 10 hours
 
@@ -58,3 +60,7 @@ expectedFailures:$expectedFailures
 ZZ
 }
 
+zopen_get_version()
+{
+  ./bin/autoconf --version | head -1 | awk '{print $4; }'
+}
