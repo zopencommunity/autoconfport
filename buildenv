@@ -62,5 +62,7 @@ ZZ
 
 zopen_get_version()
 {
+
   ./bin/autoconf --version | head -1 | awk '{print $4; }'
+
 }
