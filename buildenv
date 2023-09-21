@@ -14,6 +14,8 @@ export ZOPEN_EXTRA_CFLAGS=""
 export ZOPEN_EXTRA_LDFLAGS=""
 export PERL="/bin/env perl"
 
+export ZOPEN_RUNTIME_DEPS="perl m4"
+
 export ZOPEN_CHECK_TIMEOUT=36000 # 10 hours
 
 zopen_append_to_env()

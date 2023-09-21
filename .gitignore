@@ -63,3 +63,4 @@ tests/basic/hello.dbg
 tests/basic/hello.o
 install/
 log/
+log.STABLE/
