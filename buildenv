@@ -24,8 +24,8 @@ cat <<EOF
 export autom4te_perllibdir=\${PWD}/share/autoconf
 export AC_MACRODIR=\${PWD}/share/autoconf
 
-#To set M4 variable path
-if [ -z "${M4_HOME}"  ]; then
+# To set M4 variable path
+if [ -z "\${M4_HOME}"  ]; then
     echo "Ensure M4_HOME is set and re-source the .env"
 else
     export M4="\$M4_HOME/bin/m4"
