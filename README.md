@@ -1,3 +1,5 @@
+[![Automatic version updates](https://github.com/ZOSOpenTools/autoconfport/actions/workflows/bump.yml/badge.svg)](https://github.com/ZOSOpenTools/autoconfport/actions/workflows/bump.yml)
+
 # autoconfport
 Delta files to build autoconf for z/OS
 
