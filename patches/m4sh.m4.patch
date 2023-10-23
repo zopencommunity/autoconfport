@@ -1,0 +1,13 @@
+diff --git a/lib/m4sugar/m4sh.m4 b/lib/m4sugar/m4sh.m4
+index ce53152..e8e61cf 100644
+--- a/lib/m4sugar/m4sh.m4
++++ b/lib/m4sugar/m4sh.m4
+@@ -741,7 +741,7 @@ as_unset=as_fn_unset
+ # a variable that is not already set.  You should not unset MAIL and
+ # MAILCHECK, as that triggers a bug in Bash 2.01.
+ m4_defun([AS_UNSET],
+-[{ AS_LITERAL_WORD_IF([$1], [], [eval ])$1=; unset $1;}])
++[{ AS_LITERAL_WORD_IF([$1], [], [eval ]) unset $1;}])
+ 
+ 
+ 
