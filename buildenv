@@ -7,10 +7,10 @@
 AUTOCONF_VERSION="2.71"
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/autoconf/autoconf-${AUTOCONF_VERSION}.tar.gz"
-export ZOPEN_STABLE_DEPS="curl gzip make m4 perl zlib texinfo automake autoconf "
+export ZOPEN_STABLE_DEPS="curl gzip make m4 perl zlib texinfo automake autoconf bash flex"
 
 export ZOPEN_DEV_URL="https://github.com/autotools-mirror/autoconf.git"
-export ZOPEN_DEV_DEPS="git make m4 perl autoconf automake help2man texinfo xz zlib"
+export ZOPEN_DEV_DEPS="git make m4 perl autoconf automake help2man texinfo xz zlib bash flex"
 
 export ZOPEN_EXTRA_CFLAGS=""
 export ZOPEN_EXTRA_LDFLAGS=""
