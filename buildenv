@@ -4,7 +4,7 @@
 #
 # Note: requires zlib to be installed into system as pre-req
 # bump: autoconf-version /AUTOCONF_VERSION="(.*)"/ https://ftp.gnu.org/gnu/autoconf/|re:/href="autoconf-([\d.]+).tar.gz"/$1/|semver:*
-AUTOCONF_VERSION="2.71"
+AUTOCONF_VERSION="2.72"
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/autoconf/autoconf-${AUTOCONF_VERSION}.tar.gz"
 export ZOPEN_STABLE_DEPS="curl gzip make m4 perl zlib texinfo automake autoconf bash flex"
