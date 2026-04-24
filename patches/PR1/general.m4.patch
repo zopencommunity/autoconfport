@@ -1,12 +1,23 @@
 diff --git a/lib/autoconf/general.m4 b/lib/autoconf/general.m4
-index 900ba1e..5f4842a 100644
+index 900ba1e..2653fb7 100644
 --- a/lib/autoconf/general.m4
 +++ b/lib/autoconf/general.m4
-@@ -1379,7 +1379,7 @@ ac_exit_trap ()
+@@ -1366,7 +1366,7 @@ ac_dump_debugging_info ()
+ # config.log.
+ ac_exit_trap ()
+ {
+-  exit_status=$1
++  : ${exit_status=$?}
+   # Sanitize IFS.
+   IFS=" ""	$as_nl"
+   # Save into config.log some information that might help in debugging.
+@@ -1378,8 +1378,8 @@ ac_exit_trap ()
+ 
  dnl To minimize quoting issues, put as little code as possible in traps.
  dnl Do not start any trap code with a newline, due to a FreeBSD 4.0 bug.
- trap 'ac_exit_trap $?' 0
+-trap 'ac_exit_trap $?' 0
 -for ac_signal in 1 2 13 15; do
++trap 'exit_status=$?; ac_exit_trap' 0
 +for ac_signal in HUP INT PIPE TERM; do
    trap 'ac_signal='$ac_signal'; AS_EXIT([1])' $ac_signal
  done
