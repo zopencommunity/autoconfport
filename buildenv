@@ -4,10 +4,10 @@
 #
 # Note: requires zlib to be installed into system as pre-req
 # bump: autoconf-version /AUTOCONF_VERSION="(.*)"/ https://ftp.gnu.org/gnu/autoconf/|re:/href="autoconf-([\d.]+).tar.gz"/$1/|semver:*
-AUTOCONF_VERSION="2.72"
+AUTOCONF_VERSION="2.73"
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/autoconf/autoconf-${AUTOCONF_VERSION}.tar.gz"
-export ZOPEN_STABLE_DEPS="curl gzip make m4 perl zlib texinfo automake autoconf bash flex diffutils coreutils grep sed tar"
+export ZOPEN_STABLE_DEPS="make m4 perl zlib texinfo bash flex diffutils coreutils grep sed gawk"
 
 export ZOPEN_DEV_URL="https://github.com/autotools-mirror/autoconf.git"
 export ZOPEN_DEV_DEPS="git make m4 perl autoconf automake help2man texinfo xz zlib bash flex"
@@ -38,19 +38,33 @@ zopen_check_results()
 {
   chk="$1/$2_check.log"
 
-  ac_success=$(grep -c -E '^ *[0-9]+\: .{48}ok$' ${chk})
-  ac_failures=$(grep -c -E '^ *[0-9]+\: .{48}FAILED' ${chk})
-  ac_expectedFailures=$(grep -c -E '^ *[0-9]+\: .{48}expected failure' ${chk})
-  ac_skipped=$(grep -c -E '^ *[0-9]+\: .{48}skipped' ${chk})
-  ac_totalTests=$(grep -c -E '^ *[0-9]+\: .{48}' ${chk})
+  # Parse test results from the ERROR summary line
+  eval $(awk '
+    /^ERROR:/ {
+      match($0, /([0-9]+) tests were run/, total);
+      ac_totalTests = total[1];
+    }
+    /failed.*expected failures/ {
+      match($0, /([0-9]+) failed.*\(([0-9]+) expected/, fail);
+      ac_failures = fail[1] - fail[2];
+      ac_expectedFailures = fail[2];
+    }
+    /tests were skipped/ {
+      match($0, /([0-9]+) tests were skipped/, skip);
+      ac_skipped = skip[1];
+    }
+    END {
+      ac_success = ac_totalTests - (ac_failures + ac_expectedFailures + ac_skipped);
+      print "ac_totalTests=" ac_totalTests;
+      print "ac_failures=" ac_failures;
+      print "ac_expectedFailures=" ac_expectedFailures;
+      print "ac_skipped=" ac_skipped;
+      print "ac_success=" ac_success;
+    }
+  ' ${chk})
 
-  let t=${ac_success}+${ac_failures}+${ac_expectedFailures}+${ac_skipped}
-  if [ ${t} -ne ${ac_totalTests} ] ; then
-    echo "Failed to calculate number of test failures."
-  fi
-
-  let actualFailures=${ac_failures}+${ac_expectedFailures}
-  let totalTests=${ac_totalTests}
+  let actualFailures=${ac_failures}
+  let totalTests=${ac_totalTests}+${ac_skipped}
   let expectedFailures=13
 
   cat <<ZZ

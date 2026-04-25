@@ -1,17 +1,28 @@
 diff --git a/lib/autoconf/general.m4 b/lib/autoconf/general.m4
-index 053130b..c78e0bd 100644
+index 900ba1e..2653fb7 100644
 --- a/lib/autoconf/general.m4
 +++ b/lib/autoconf/general.m4
-@@ -1367,7 +1367,7 @@ trap 'exit_status=$?
-     rm -f -r conftest* confdefs* conf$[$]* $ac_clean_files &&
-     exit $exit_status
- ' 0
+@@ -1366,7 +1366,7 @@ ac_dump_debugging_info ()
+ # config.log.
+ ac_exit_trap ()
+ {
+-  exit_status=$1
++  : ${exit_status=$?}
+   # Sanitize IFS.
+   IFS=" ""	$as_nl"
+   # Save into config.log some information that might help in debugging.
+@@ -1378,8 +1378,8 @@ ac_exit_trap ()
+ 
+ dnl To minimize quoting issues, put as little code as possible in traps.
+ dnl Do not start any trap code with a newline, due to a FreeBSD 4.0 bug.
+-trap 'ac_exit_trap $?' 0
 -for ac_signal in 1 2 13 15; do
++trap 'exit_status=$?; ac_exit_trap' 0
 +for ac_signal in HUP INT PIPE TERM; do
    trap 'ac_signal='$ac_signal'; AS_EXIT([1])' $ac_signal
  done
  ac_signal=0
-@@ -2803,7 +2803,7 @@ AC_DEFUN([AC_EGREP_HEADER],
+@@ -2859,7 +2859,7 @@ AC_DEFUN([AC_EGREP_HEADER],
  # Shell function body for _AC_COMPILE_IFELSE.
  m4_define([_AC_COMPILE_IFELSE_BODY],
  [  AS_LINENO_PUSH([$[]1])
@@ -20,7 +31,7 @@ index 053130b..c78e0bd 100644
    AS_IF([_AC_DO_STDERR($ac_compile) && {
  	 test -z "$ac_[]_AC_LANG_ABBREV[]_werror_flag" ||
  	 test ! -s conftest.err
-@@ -2827,7 +2827,7 @@ AC_DEFUN([_AC_COMPILE_IFELSE],
+@@ -2883,7 +2883,7 @@ AC_DEFUN([_AC_COMPILE_IFELSE],
    [$0_BODY])]dnl
  [m4_ifvaln([$1], [AC_LANG_CONFTEST([$1])])]dnl
  [AS_IF([ac_fn_[]_AC_LANG_ABBREV[]_try_compile "$LINENO"], [$2], [$3])
@@ -29,7 +40,7 @@ index 053130b..c78e0bd 100644
  ])# _AC_COMPILE_IFELSE
  
  
-@@ -2859,7 +2859,7 @@ AU_DEFUN([AC_TRY_COMPILE],
+@@ -2915,7 +2915,7 @@ AU_DEFUN([AC_TRY_COMPILE],
  # Shell function body for _AC_LINK_IFELSE.
  m4_define([_AC_LINK_IFELSE_BODY],
  [  AS_LINENO_PUSH([$[]1])
@@ -38,7 +49,7 @@ index 053130b..c78e0bd 100644
    AS_IF([_AC_DO_STDERR($ac_link) && {
  	 test -z "$ac_[]_AC_LANG_ABBREV[]_werror_flag" ||
  	 test ! -s conftest.err
-@@ -2874,7 +2874,7 @@ m4_define([_AC_LINK_IFELSE_BODY],
+@@ -2930,7 +2930,7 @@ m4_define([_AC_LINK_IFELSE_BODY],
    # created by the PGI compiler (conftest_ipa8_conftest.oo), as it would
    # interfere with the next link command; also delete a directory that is
    # left behind by Apple's compiler.  We do this before executing the actions.
@@ -47,7 +58,7 @@ index 053130b..c78e0bd 100644
    AS_LINENO_POP
    AS_SET_STATUS([$ac_retval])
  ])# _AC_LINK_IFELSE_BODY
-@@ -2898,7 +2898,7 @@ AC_DEFUN([_AC_LINK_IFELSE],
+@@ -2954,7 +2954,7 @@ AC_DEFUN([_AC_LINK_IFELSE],
    [$0_BODY])]dnl
  [m4_ifvaln([$1], [AC_LANG_CONFTEST([$1])])]dnl
  [AS_IF([ac_fn_[]_AC_LANG_ABBREV[]_try_link "$LINENO"], [$2], [$3])
@@ -56,7 +67,7 @@ index 053130b..c78e0bd 100644
      conftest$ac_exeext[]m4_ifval([$1], [ conftest.$ac_ext])[]dnl
  ])# _AC_LINK_IFELSE
  
-@@ -2946,7 +2946,7 @@ m4_define([_AC_RUN_IFELSE_BODY],
+@@ -3002,7 +3002,7 @@ m4_define([_AC_RUN_IFELSE_BODY],
        [AS_ECHO(["$as_me: program exited with status $ac_status"]) >&AS_MESSAGE_LOG_FD
         _AC_MSG_LOG_CONFTEST
         ac_retval=$ac_status])
@@ -65,7 +76,7 @@ index 053130b..c78e0bd 100644
    AS_LINENO_POP
    AS_SET_STATUS([$ac_retval])
  ])# _AC_RUN_IFELSE_BODY
-@@ -2968,7 +2968,7 @@ AC_DEFUN([_AC_RUN_IFELSE],
+@@ -3024,7 +3024,7 @@ AC_DEFUN([_AC_RUN_IFELSE],
  [m4_ifvaln([$1], [AC_LANG_CONFTEST([$1])])]dnl
  [AS_IF([ac_fn_[]_AC_LANG_ABBREV[]_try_run "$LINENO"], [$2], [$3])
  rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
